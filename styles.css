@@ -1,0 +1,285 @@
+@font-face {
+  font-family: 'Young Serif';
+  src: url("../fonts/youngserif.eot");
+  src: url("../fonts/youngserif.eot?#iefix") format("embedded-opentype"), url("../fonts/youngserif.woff2") format("woff2"), url("../fonts/youngserif.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Questa';
+  src: url("../fonts/questa.eot");
+  src: url("../fonts/questa.eot?#iefix") format("embedded-opentype"), url("../fonts/questa.woff2") format("woff2"), url("../fonts/questa.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+:root {
+  font-size: 18px; }
+
+@media (min-width: 320px) and (max-width: 960px) {
+  :root {
+    font-size: -webkit-calc( 18px + (22 - 18) * ( (100vw - 320px) / ( 960 - 320)));
+    font-size: calc( 18px + (22 - 18) * ( (100vw - 320px) / ( 960 - 320))); } }
+
+@media (min-width: 960px) {
+  :root {
+    font-size: 22px; } }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+body {
+  line-height: 1.5;
+  color: #0b4366;
+  background-color: #fcfcff;
+  font-family: "Questa", "Franklin Gothic", "Helvetica Neue", sans-serif; }
+
+main {
+  max-width: 40em;
+  margin: 0 auto; }
+
+footer {
+  background-color: #0b4366;
+  color: #fcfcff;
+  text-align: center; }
+  footer p {
+    margin: 0; }
+
+h1 {
+  margin-bottom: 0.5em;
+  font-family: "Young Serif", "Georgia", serif;
+  font-weight: normal; }
+
+h2 {
+  margin: 1em 0 0.5em;
+  font-family: "Young Serif", "Georgia", serif;
+  font-weight: normal; }
+
+p {
+  margin-bottom: 1em; }
+  p ~ pre {
+    margin-bottom: 1em;
+    text-align: center; }
+
+a {
+  color: currentColor; }
+
+ul {
+  margin-left: 0.5em;
+  margin-bottom: 1em; }
+
+li {
+  margin-left: 1em; }
+
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=css */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  -webkit-hyphens: none;
+     -moz-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none; }
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 0.5em;
+  margin: 0.5em 0;
+  overflow: auto;
+  -webkit-border-radius: 0.3em;
+          border-radius: 0.3em; }
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #272822; }
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  -webkit-border-radius: 0.3em;
+          border-radius: 0.3em;
+  white-space: normal; }
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray; }
+
+.token.punctuation {
+  color: #f8f8f2; }
+
+.namespace {
+  opacity: 0.7; }
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f92672; }
+
+.token.boolean,
+.token.number {
+  color: #ae81ff; }
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a6e22e; }
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #f8f8f2; }
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #e6db74; }
+
+.token.keyword {
+  color: #66d9ef; }
+
+.token.regex,
+.token.important {
+  color: #fd971f; }
+
+.token.important,
+.token.bold {
+  font-weight: bold; }
+
+.token.italic {
+  font-style: italic; }
+
+.token.entity {
+  cursor: help; }
+
+pre {
+  overflow: auto; }
+
+code {
+  background-color: #eee;
+  color: #199ff2;
+  padding: 0.25em;
+  display: inline-block;
+  -webkit-border-radius: 0.25em;
+          border-radius: 0.25em;
+  font-size: 85%; }
+
+table {
+  border-collapse: collapse; }
+
+tr:nth-of-type(odd) {
+  background-color: #f1fbd4; }
+
+td,
+th {
+  padding: 0.25em 0.5em;
+  border: 1px solid #80a610;
+  text-align: left; }
+
+th {
+  background: #d6fa66;
+  font-family: "Young Serif", "Georgia", serif;
+  font-weight: normal; }
+
+@media only screen and (max-width: 479px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block; }
+  thead tr {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+  tr {
+    border: 1px solid #80a610; }
+  td {
+    border: 0;
+    border-bottom: 1px solid #bceb31;
+    position: relative;
+    padding-left: 7em; }
+  td::before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 20%;
+    padding-right: 10px;
+    white-space: nowrap; }
+  .value-types td:nth-of-type(1)::before {
+    content: 'Value type'; }
+  .value-types td:nth-of-type(2)::before {
+    content: 'Description'; }
+  .value-types td:nth-of-type(3)::before {
+    content: 'Example'; }
+  .syntax-symbols td:nth-of-type(1)::before {
+    content: 'Name'; }
+  .syntax-symbols td:nth-of-type(2)::before {
+    content: 'Explanation'; }
+  .syntax-symbols td:nth-of-type(3)::before {
+    content: 'Example'; } }
+
+@media all and (min-width: 480px) {
+  .value-types td:nth-of-type(1) {
+    width: 20%; }
+  .value-types td:nth-of-type(2) {
+    width: 40%; }
+  .value-types td:nth-of-type(3) {
+    width: 40%; }
+  .syntax-symbols td:nth-of-type(1) {
+    width: 10%;
+    text-align: center; }
+  .syntax-symbols td:nth-of-type(2) {
+    width: 25%; }
+  .syntax-symbols td:nth-of-type(3) {
+    max-width: 14em;
+    text-align: center; } }
+
+@media only print {
+  h2 {
+    page-break-before: always; }
+  main > :not(.to-print) {
+    display: none; }
+  .to-print {
+    font-size: 16px; } }

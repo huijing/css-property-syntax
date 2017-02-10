@@ -1,0 +1,282 @@
+@charset 'utf-8';
+
+@font-face {
+  font-family: 'Young Serif';
+  src: url('../fonts/youngserif.eot');
+  src: url('../fonts/youngserif.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/youngserif.woff2') format('woff2'),
+     url('../fonts/youngserif.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Questa';
+  src: url('../fonts/questa.eot');
+  src: url('../fonts/questa.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/questa.woff2') format('woff2'),
+     url('../fonts/questa.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$serif: 'Young Serif', 'Georgia', serif;
+$sans-serif: 'Questa', 'Franklin Gothic', 'Helvetica Neue', sans-serif;
+
+// Responsive typography
+$min-width: 320;
+$max-width: 960;
+$min-font: 18;
+$max-font: 22;
+
+:root {
+  font-size: #{$min-font}px;
+}
+
+@media (min-width: #{$min-width}px) and (max-width: #{$max-width}px) {
+  :root {
+    font-size: calc( #{$min-font}px + (#{$max-font} - #{$min-font}) * ( (100vw - #{$min-width}px) / ( #{$max-width} - #{$min-width})));
+  }
+}
+
+@media (min-width: #{$max-width}px) {
+  :root {
+    font-size: #{$max-font}px;
+  }
+}
+
+$colours: (
+  'text': #0b4366,
+  'accent2': #199ff2,
+  'bg': #fcfcff,
+  'accent': #d6fa66,
+  'border': #80a610
+);
+
+@function colour($colour, $map: $colours) {
+  @return map-get($colours, $colour);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  line-height: 1.5;
+  color: colour('text');
+  background-color: colour('bg');
+  font-family: $sans-serif;
+}
+
+main {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: colour('text');
+  color: colour('bg');
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+h1 {
+  margin-bottom: 0.5em;
+  font-family: $serif;
+  font-weight: normal;
+}
+
+h2 {
+  margin: 1em 0 0.5em;
+  font-family: $serif;
+  font-weight: normal;
+}
+
+p {
+  margin-bottom: 1em;
+
+  ~ pre {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+}
+
+a {
+  color: currentColor;
+}
+
+ul {
+  margin-left: 0.5em;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-left: 1em;
+}
+
+@import 'prism';
+
+pre {
+  overflow: auto;
+}
+
+code {
+  background-color: #eee;
+  color: colour('accent2');
+  padding: 0.25em;
+  display: inline-block;
+  border-radius: 0.25em;
+  font-size: 85%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr:nth-of-type(odd) {
+  background-color: lighten(colour('border'), 55%);
+}
+
+td,
+th {
+  padding: 0.25em 0.5em;
+  border: 1px solid colour('border');
+  text-align: left;
+}
+
+th {
+  background: colour('accent');
+  font-family: $serif;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 479px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  tr {
+    border: 1px solid colour('border');
+  }
+
+  td {
+    border: 0;
+    border-bottom: 1px solid lighten(colour('border'), 20%);
+    position: relative;
+    padding-left: 7em;
+  }
+
+  td::before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 20%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .value-types {
+    td:nth-of-type(1)::before {
+      content: 'Value type';
+    }
+
+    td:nth-of-type(2)::before {
+      content: 'Description';
+    }
+
+    td:nth-of-type(3)::before {
+      content: 'Example';
+    }
+  }
+
+  .syntax-symbols {
+    td:nth-of-type(1)::before {
+      content: 'Name';
+    }
+
+    td:nth-of-type(2)::before {
+      content: 'Explanation';
+    }
+
+    td:nth-of-type(3)::before {
+      content: 'Example';
+    }
+  }
+}
+
+@media all and (min-width: 480px) {
+  .value-types {
+    td:nth-of-type(1) {
+      width: 20%;
+    }
+
+    td:nth-of-type(2) {
+      width: 40%;
+    }
+
+    td:nth-of-type(3) {
+      width: 40%;
+    }
+
+  }
+
+  .syntax-symbols {
+    td:nth-of-type(1) {
+      width: 10%;
+      text-align: center;
+    }
+
+    td:nth-of-type(2) {
+      width: 25%;
+    }
+
+    td:nth-of-type(3) {
+      max-width: 14em;
+      text-align: center;
+    }
+  }
+}
+
+@media only print {
+  h2 {
+    page-break-before: always;
+  }
+
+  main > :not(.to-print) {
+    display: none;
+  }
+
+  .to-print {
+    font-size: 16px;
+  }
+}
