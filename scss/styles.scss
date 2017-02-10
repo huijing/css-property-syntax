@@ -82,6 +82,7 @@ body {
 main {
   max-width: 40em;
   margin: 0 auto;
+  padding: 0.5em;
 }
 
 footer {
@@ -98,6 +99,7 @@ h1 {
   margin-bottom: 0.5em;
   font-family: $serif;
   font-weight: normal;
+  line-height: 1.2;
 }
 
 h2 {
