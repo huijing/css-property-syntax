@@ -90,20 +90,20 @@
             <td><pre><code>&lt;'property-name'&gt; = value1 value2 value3</code></pre>&darr;<pre><code class="language-css">.selector { property: value1 value2 value3; }</code></pre></td>
           </tr>
           <tr>
-            <td>&&</td>
+            <td class="symbol">&&</td>
             <td>All values must occur, order doesn't matter</td>
             <td><pre><code>&lt;'property-name'&gt; = value1 && value2</code></pre>&darr;<pre><code class="language-css">.selector { property: value1 value2; }
 .selector { property: value2 value1; }</code></pre></td>
           </tr>
           <tr>
-            <td>|</td>
+            <td class="symbol">|</td>
             <td>Only 1 value must occur</td>
             <td><pre><code>&lt;'property-name'&gt; = value1 | value2 | value3</code></pre>&darr;<pre><code class="language-css">.selector { property: value1; }
 .selector { property: value2; }
 .selector { property: value3; }</code></pre></td>
           </tr>
           <tr>
-            <td>||</td>
+            <td class="symbol">||</td>
             <td>1 or more values must occur, order doesn't matter</td>
             <td><pre><code>&lt;'property-name'&gt; = value1 || value2 || value3</code></pre>&darr;<pre><code class="language-css">.selector { property: value3; }
 .selector { property: value2 value3; }
@@ -111,7 +111,7 @@
  and so on...</code></pre></td>
           </tr>
           <tr>
-            <td>[]</td>
+            <td class="symbol">[&nbsp;]</td>
             <td>Components belong to a single grouping</td>
             <td><pre><code>&lt;'property-name'&gt; = [ value1 | value2 ] value3</code></pre>&darr;<pre><code class="language-css">.selector { property: value1 value3; }
 .selector { property: value2 value3; }</code></pre></td>
@@ -131,13 +131,13 @@
         </thead>
         <tbody>
           <tr>
-            <td>?</td>
+            <td class="symbol">?</td>
             <td>Optional value, can occur 0 or 1 time</td>
             <td><pre><code>&lt;'property-name'&gt; = value1 [, value2 ]?</code></pre>&darr;<pre><code class="language-css">.selector { property: value1; }
 .selector { property: value1, value2; }</code></pre></td>
           </tr>
           <tr>
-            <td>*</td>
+            <td class="symbol">*</td>
             <td>Optional value, can occur 0 or many times, multiple values are comma-separated</td>
             <td><pre><code>&lt;'property-name'&gt; = value1 [, &lt;value2&gt;]*</code></pre>&darr;<pre><code class="language-css">.selector { property: value1; }
 .selector { property: value1, &lt;value2&gt;; }
@@ -145,7 +145,7 @@
  and so on...</code></pre></td>
           </tr>
           <tr>
-            <td>+</td>
+            <td class="symbol">+</td>
             <td>Can occur 1 or many times, multiple values are space-separated</td>
             <td><pre><code>&lt;'property-name'&gt; = &lt;value&gt;+</code></pre>&darr;<pre><code class="language-css">.selector { property: &lt;value&gt;; }
 .selector { property: &lt;value&gt; &lt;value&gt;; }
@@ -153,26 +153,26 @@
  and so on...</code></pre></td>
           </tr>
           <tr>
-            <td>{&xscr;}</td>
+            <td class="symbol">{&xscr;}</td>
             <td>Value occurs &xscr; times, multiple values are space-separated</td>
             <td><pre><code>&lt;'property-name'&gt; = &lt;value&gt;{2}</code></pre>&darr;<pre><code class="language-css">.selector { property: &lt;value&gt; &lt;value&gt;; }</code></pre></td>
           </tr>
           <tr>
-            <td>{&xscr;, &yscr;}</td>
+            <td class="symbol">{&xscr;, &yscr;}</td>
             <td>Value occurs at least &xscr; times, at most &yscr; times, multiple values are space-separated</td>
             <td><pre><code>&lt;'property-name'&gt; = &lt;value&gt;{1,3}</code></pre>&darr;<pre><code class="language-css">.selector { property: &lt;value&gt;; }
 .selector { property: &lt;value&gt; &lt;value&gt;; }
 .selector { property: &lt;value&gt; &lt;value&gt; &lt;value&gt;; }</code></pre></td>
           </tr>
           <tr>
-            <td>{&xscr;,}</td>
+            <td class="symbol">{&xscr;,}</td>
             <td>Value occurs at least &xscr; times, no maximum limit, multiple values are space-separated</td>
             <td><pre><code>&lt;'property-name'&gt; = &lt;value&gt;{1,}</code></pre>&darr;<pre><code class="language-css">.selector { property: &lt;value&gt;; }
 .selector { property: &lt;value&gt; &lt;value&gt; &lt;value&gt;; }
  and so on...</code></pre></td>
           </tr>
           <tr>
-            <td>#</td>
+            <td class="symbol">#</td>
             <td>Value occurs 1 or many times, multiple values are comma-separated</td>
             <td><pre><code>&lt;'property-name'&gt; = &lt;value&gt;#</code></pre>&darr;<pre><code class="language-css">.selector { property: &lt;value&gt;; }
 .selector { property: &lt;value&gt;, &lt;value&gt;; }
@@ -180,7 +180,7 @@
  and so on...</code></pre></td>
           </tr>
           <tr>
-            <td>[]!</td>
+            <td class="symbol">[&nbsp;]!</td>
             <td>Values in grouping are required, at least 1 value must occur</td>
             <td><pre><code>&lt;'property-name'&gt; = &lt;value1&gt; [ &lt;value2&gt; | &lt;value3&gt; ]!</code></pre>&darr;<pre><code class="language-css">.selector { property: &lt;value1&gt; &lt;value2&gt;; }
 .selector { property: &lt;value1&gt; &lt;value3&gt;; }</code></pre></td>
@@ -197,14 +197,13 @@
       <li><a href="https://www.smashingmagazine.com/2016/05/understanding-the-css-property-value-syntax/">Understanding The CSS Property Value Syntax</a></li>
     </ul>
 
-    <div class="to-print">
-      <p class="small-txt">
-        <small>Examples referenced from <a href="https://twitter.com/russmaxdesign?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Russ Weakley</a>'s article, <a href="https://www.smashingmagazine.com/2016/05/understanding-the-css-property-value-syntax/">Understanding The CSS Property Value Syntax</a>.<br>Optimised for print. Sort of.</small>
-      </p>
-    </div>
+    <p class="small-txt">
+      <small>Examples referenced from <a href="https://twitter.com/russmaxdesign?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Russ Weakley</a>'s article, <a href="https://www.smashingmagazine.com/2016/05/understanding-the-css-property-value-syntax/">Understanding The CSS Property Value Syntax</a>.<br>Optimised for print. Sort of.</small>
+    </p>
+
   </main>
 
-  <footer class="to-print">
+  <footer>
     <p><small>Another random side project by <a href="https://www.chenhuijing.com/">Chen Hui Jing</a>.</small></p>
   </footer>
 

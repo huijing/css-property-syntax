@@ -241,6 +241,10 @@ th {
   }
 }
 
+.symbol {
+  font-size: 175%;
+}
+
 @media all and (min-width: 480px) {
   .value-types {
     td:nth-of-type(1) {
@@ -259,7 +263,7 @@ th {
 
   .syntax-symbols {
     td:nth-of-type(1) {
-      width: 10%;
+      width: 17%;
       text-align: center;
     }
 
@@ -275,11 +279,16 @@ th {
 }
 
 @media only print {
+  body {
+    color: #000;
+  }
+
   h2 {
     page-break-before: always;
   }
 
-  main > :not(.to-print) {
+  main > :not(.to-print),
+  footer {
     display: none;
   }
 
